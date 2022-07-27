@@ -17,13 +17,13 @@ jobs:
 
       - name: Prepare
         run: |
-          docker-compose -f ./.github/docker-compose.yml up -d ${ENV_SERVICE}
-          docker exec ${ENV_SERVICE} php -v
-          docker exec ${ENV_SERVICE} php -m
-          docker exec ${ENV_SERVICE} php --ri swoole
-          docker exec ${ENV_SERVICE} composer -V
-          docker exec ${ENV_SERVICE} composer update --no-interaction --prefer-dist --no-progress
+          docker-compose -f ./.github/docker-compose.yml up -d swoole
+          docker exec swoole php -v
+          docker exec swoole php -m
+          docker exec swoole php --ri swoole
+          docker exec swoole composer -V
+          docker exec swoole composer update --no-interaction --prefer-dist --no-progress
 
       - name: Analyse
         run: |
-          docker exec ${ENV_SERVICE} ./vendor/bin/phpstan analyse --memory-limit 1G
+          docker exec swoole ./vendor/bin/phpstan analyse --memory-limit 1G

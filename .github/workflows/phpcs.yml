@@ -13,10 +13,10 @@ jobs:
 
       - name: Prepare
         run: |
-          docker-compose -f ./.github/docker-compose.yml up -d ${ENV_SERVICE}
-          docker exec ${ENV_SERVICE} php -v
-          docker exec ${ENV_SERVICE} composer -V
-          docker exec ${ENV_SERVICE} composer update --no-interaction --prefer-dist --no-progress
+          docker-compose -f ./.github/docker-compose.yml up -d swoole
+          docker exec swoole php -v
+          docker exec swoole composer -V
+          docker exec swoole composer update --no-interaction --prefer-dist --no-progress
 
       - name: Coding Standards Tests
-        run: docker exec ${ENV_SERVICE} ./vendor/bin/php-cs-fixer fix --dry-run --diff
+        run: docker exec swoole ./vendor/bin/php-cs-fixer fix --dry-run --diff
