@@ -49,7 +49,6 @@ return (new PhpCsFixer\Config())
                 __DIR__ . '/vendor',
             ])
             ->in(__DIR__ . '/src')
-            ->in(__DIR__ . '/tests')
             ->append([__FILE__])
     )
 ;
