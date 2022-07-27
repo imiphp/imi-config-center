@@ -4,3 +4,5 @@ composer.lock
 .runtime
 *.log
 *.pid
+*.cache
+/.vscode

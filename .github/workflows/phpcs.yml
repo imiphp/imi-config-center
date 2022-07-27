@@ -1,0 +1,22 @@
+name: Coding Standards
+
+on: [push, pull_request]
+
+jobs:
+  tests:
+    runs-on: ubuntu-20.04
+    env:
+      SWOOLE_DOCKER_VERSION: 4.8-php8.0
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Prepare
+        run: |
+          docker-compose -f ./.github/docker-compose.yml up -d ${ENV_SERVICE}
+          docker exec ${ENV_SERVICE} php -v
+          docker exec ${ENV_SERVICE} composer -V
+          docker exec ${ENV_SERVICE} composer update --no-interaction --prefer-dist --no-progress
+
+      - name: Coding Standards Tests
+        run: docker exec ${ENV_SERVICE} ./vendor/bin/php-cs-fixer fix --dry-run --diff
