@@ -81,7 +81,16 @@ class ConfigCenter
             }
             foreach ($config['configs'] ?? [] as $imiConfigKey => $item)
             {
-                $value = $driver->get($item['key'] ?? $imiConfigKey, $enableCache, $item);
+                try
+                {
+                    $value = $driver->get($item['key'] ?? $imiConfigKey, $enableCache, $item);
+                }
+                catch (\Throwable $th)
+                {
+                    $value = null;
+                    // @phpstan-ignore-next-line
+                    App::getBean('ErrorLog')->onException($th);
+                }
                 $this->setConfig($imiConfigKey, $value);
             }
         }
