@@ -13,13 +13,13 @@
 
 **支持的配置中心：**
 
-[x] Nacos ([imi-nacos](https://github.com/imiphp/imi-nacos))
+* [x] Nacos ([imi-nacos](https://github.com/imiphp/imi-nacos))
 
-[ ] Apollo
+* [ ] Apollo
 
-[ ] etcd
+* [ ] etcd
 
-[ ] Zookeeper
+* [ ] Zookeeper
 
 ……
 
