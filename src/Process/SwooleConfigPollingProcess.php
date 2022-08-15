@@ -31,7 +31,7 @@ if (Imi::checkAppType('swoole'))
             $channel = new \Swoole\Coroutine\Channel();
             Event::on('IMI.PROCESS.END', function () use ($channel) {
                 $channel->push(1);
-            }, ImiPriority::IMI_MAX);
+            }, ImiPriority::IMI_MIN);
             $channel->pop();
         }
 
