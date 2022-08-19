@@ -1,7 +1,7 @@
 {
     "name": "imiphp/imi-config-center",
     "type": "library",
-    "license": "MIT",
+    "license": "MulanPSL-2.0",
     "description": "imi 框架配置中心组件。imi configuration center.",
     "require-dev": {
         "friendsofphp/php-cs-fixer": "~3.4.0",

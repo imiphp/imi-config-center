@@ -59,14 +59,14 @@ QQ群：17916227 [![点击加群](https://pub.idqqimg.com/wpa/images/group.png "
 
 ## 运行环境
 
-- [PHP](https://php.net/) >= 7.4
-- [Composer](https://getcomposer.org/) >= 2.0
-- [Swoole](https://www.swoole.com/) >= 4.8.0
-- [imi](https://www.imiphp.com/) >= 2.1
+* [PHP](https://php.net/) >= 7.4
+* [Composer](https://getcomposer.org/) >= 2.0
+* [Swoole](https://www.swoole.com/) >= 4.8.0
+* [imi](https://www.imiphp.com/) >= 2.1
 
 ## 版权信息
 
-`imi-config-center` 遵循 MIT 开源协议发布，并提供免费使用。
+`imi-config-center` 遵循 MulanPSL-2.0 开源协议发布，并提供免费使用。
 
 ## 捐赠
 
