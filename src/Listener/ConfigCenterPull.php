@@ -8,6 +8,7 @@ use Imi\App;
 use Imi\Bean\Annotation\Listener;
 use Imi\Event\EventParam;
 use Imi\Event\IEventListener;
+use Imi\Log\Log;
 use Imi\Util\Imi;
 
 /**
@@ -24,6 +25,10 @@ class ConfigCenterPull implements IEventListener
     {
         /** @var \Imi\ConfigCenter\ConfigCenter $configCenter */
         $configCenter = App::getBean('ConfigCenter');
-        $configCenter->pull(null, null, Imi::checkAppType('fpm'));
+        try {
+            $configCenter->pull(null, null, Imi::checkAppType('fpm'));
+        } catch(\Throwable $th) {
+            Log::error($th);
+        }
     }
 }
