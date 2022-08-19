@@ -25,9 +25,12 @@ class ConfigCenterPull implements IEventListener
     {
         /** @var \Imi\ConfigCenter\ConfigCenter $configCenter */
         $configCenter = App::getBean('ConfigCenter');
-        try {
+        try
+        {
             $configCenter->pull(null, null, Imi::checkAppType('fpm'));
-        } catch(\Throwable $th) {
+        }
+        catch (\Throwable $th)
+        {
             Log::error($th);
         }
     }
