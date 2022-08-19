@@ -17,7 +17,9 @@
 
 * [ ] Apollo
 
-* [ ] etcd
+* [x] etcd ([imi-etcd](https://github.com/imiphp/imi-etcd))
+
+* [ ] Consul
 
 * [ ] Zookeeper
 
