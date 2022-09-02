@@ -25,7 +25,8 @@
     },
     "suggest": {
         "imiphp/imi-nacos": "",
-        "imiphp/imi-etcd": ""
+        "imiphp/imi-etcd": "",
+        "imiphp/imi-zookeeper": ""
     },
     "minimum-stability": "dev",
     "prefer-stable": true

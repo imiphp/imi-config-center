@@ -21,7 +21,7 @@
 
 * [ ] Consul
 
-* [ ] Zookeeper
+* [x] Zookeeper ([imi-zookeeper](https://github.com/imiphp/imi-zookeeper))
 
 ……
 
@@ -53,9 +53,15 @@
 
 如果配置中心支持服务端推送（长轮询），建议用这个方式，对配置中心服务端压力较小。
 
-## 免费技术支持
+## 社群
 
-QQ群：17916227 [![点击加群](https://pub.idqqimg.com/wpa/images/group.png "点击加群")](https://jq.qq.com/?_wv=1027&k=5wXf4Zq)，如有问题会有人解答和修复。
+**imi 框架交流群：** 17916227 [![点击加群](https://pub.idqqimg.com/wpa/images/group.png "点击加群")](https://jq.qq.com/?_wv=1027&k=5wXf4Zq)
+
+**微信群：**
+
+<img src="https://github.com/imiphp/imi/raw/2.1/res/wechat.png" alt="imi" width="256px" />
+
+**打赏赞助：** <https://www.imiphp.com/donate.html>
 
 ## 运行环境
 
