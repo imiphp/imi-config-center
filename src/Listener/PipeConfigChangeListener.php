@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Imi\ConfigCenter\Listener;
 
+use Imi\App;
 use Imi\Bean\Annotation\Listener;
 use Imi\Config;
 use Imi\ConfigCenter\Event\Param\PipeConfigChangeEventParam;
@@ -35,6 +36,8 @@ class PipeConfigChangeListener implements IEventListener
         {
             $data = new PipeConfigChangeEventParam($data);
         }
-        Config::setConfig($data->getConfigKey(), $data->getParsedValue());
+        /** @var \Imi\ConfigCenter\ConfigCenter $configCenter */
+        $configCenter = App::getBean('ConfigCenter');
+        $configCenter->setConfig($data->getConfigKey(), $data->getParsedValue());
     }
 }

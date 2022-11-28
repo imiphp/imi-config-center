@@ -178,18 +178,18 @@ class ConfigCenter
      */
     public function setConfig(string $configKey, $parsedValue): void
     {
-        if (!\is_array($parsedValue))
+        if ($parsedValue instanceof SimpleXMLElement)
         {
-            if ($parsedValue instanceof SimpleXMLElement)
-            {
-                $parsedValue = json_decode(json_encode($parsedValue), true);
-            }
-            else
-            {
-                $parsedValue = (array) $parsedValue;
-            }
+            $parsedValue = json_decode(json_encode($parsedValue), true);
         }
-        Config::setConfig($configKey, $parsedValue);
+        if (str_contains($configKey, '.'))
+        {
+            Config::set($configKey, $parsedValue);
+        }
+        else
+        {
+            Config::setConfig($configKey, (array) $parsedValue);
+        }
     }
 
     protected function polling(IConfigDriver $driver, array $config): void
